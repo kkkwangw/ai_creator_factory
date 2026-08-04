@@ -1,0 +1,24 @@
+schema_version = 1
+
+[local]
+conda_environment = "codex"
+python = ""
+ffmpeg = ""
+ffprobe = ""
+whisper = ""
+whisper_model = ""
+
+[remote]
+persistent_root = ""
+uv = ""
+ffmpeg = ""
+ffprobe = ""
+comfyui_root = ""
+comfyui_python = ""
+comfyui_url = "http://127.0.0.1:8188"
+models_root = ""
+uv_cache = ""
+
+[policy]
+host_key_mode = "tofu_auto"
+allow_public_comfyui = false

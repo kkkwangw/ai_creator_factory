@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source_repository": "https://github.com/Tencent/WeChatReading",
+  "source_commit": "315698a8da1810fab0bbf24a52b38a6960e54cdc",
+  "skill_version": "1.0.4",
+  "project_wrapper_version": "1.0.4-project-1",
+  "upstream_skill_vendored_as": "UPSTREAM_SKILL.md",
+  "license": "Apache-2.0",
+  "vendored_at": "2026-08-04",
+  "update_policy": "manual_diff_review_only",
+  "file_sha256": {
+    "LICENSE": "61e07995ef646185c582028b8f23426219f4d873b8255d38cfc6e582584a69eb",
+    "SKILL.md": "1cf837d2eae70130877fd7bf86c7dc5ef216ab1eaf40598058e4dfa6c11ab1c6",
+    "UPSTREAM_SKILL.md": "5af076f740b0e51ef5d830cbaa3845714e8cc41e82f49e787bd4fb1a6f00a5db",
+    "book.md": "eb0857bd6a3623bbeecd22bc53c396476d3d43687a535a7235100a9663bdb742",
+    "discover.md": "5cf1f228da17ac783be5548bc6ac62ea2c64ab8a50cf6f2b4ca090f60070591c",
+    "notes.md": "616b5a162b8cb516dfa15f1ed9d5cd4be9d56915c1cd35ca1d2b9cfae741632a",
+    "profile.md": "a099e804a6a1fabf0a5c0313e01e4fd7597c73cc6ea198b472d48c8cb6667302",
+    "readdata.md": "35534d41984199b315f565a0c468346b1115ebfb5a5b09d89685aec9c820434c",
+    "review.md": "8a86c3a70b05900b408ebec554de0e4177e9f0c8105f8d7e33ada693fd13a31f",
+    "search.md": "19dfb82926b87df26d94ef2d65c0f9f45319d3fa4b3378ca1aa887fd63e3a84d",
+    "shelf.md": "f0b7897e80166e1edd42f34552561211b46604b0c43e32746000b9a3ec5ac6f4"
+  }
+}

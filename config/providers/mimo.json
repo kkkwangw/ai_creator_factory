@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "provider": "mimo",
+  "capability": "audio.text_to_speech",
+  "execution_location": "local",
+  "base_url": "https://api.xiaomimimo.com/v1",
+  "model": "mimo-v2.5-tts",
+  "voice": "冰糖",
+  "format": "wav",
+  "stream": false,
+  "api_key_environment": "MIMO_API_KEY",
+  "target_duration_seconds": [48, 55],
+  "style_policy": "fixed_young_woman_calm_cinematic_with_limited_dynamic_tags"
+}

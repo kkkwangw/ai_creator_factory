@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "deployment_id": "DEP-20260804-153000",
+  "project_id": "project-example",
+  "remote_root": "/confirmed/persistent/project-example",
+  "files": [
+    {
+      "source_path": "PROJECT.md",
+      "remote_path": "PROJECT.md",
+      "mode": "auto",
+      "expected_remote_sha256": null
+    },
+    {
+      "source_path": "data/references/video/reference.mp4",
+      "remote_path": "data/references/video/reference.mp4",
+      "mode": "manual"
+    },
+    {
+      "source_path": "models/wan/model.safetensors",
+      "remote_path": "models/wan/model.safetensors",
+      "mode": "remote_existing",
+      "size_bytes": 1,
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

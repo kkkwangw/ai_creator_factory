@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "approved": [],
+  "candidates": [
+    {
+      "capability": "image.generate_and_edit",
+      "name": "FLUX.2 Klein 4B Base FP8",
+      "provider": "black-forest-labs",
+      "revision": "103db268c10d4d3921101b46057671f9ac460da6",
+      "license": "Apache-2.0",
+      "status": "candidate",
+      "requires_gpu_benchmark": true
+    },
+    {
+      "capability": "video.image_to_video",
+      "name": "Wan2.2-TI2V-5B",
+      "provider": "Wan-Video",
+      "revision": "921dbaf3f1674a56f47e83fb80a34bac8a8f203e",
+      "license": "Apache-2.0",
+      "status": "candidate",
+      "requires_gpu_benchmark": true
+    },
+    {
+      "capability": "video.lip_sync",
+      "name": "MuseTalk 1.5",
+      "provider": "TMElyralab",
+      "revision": "3ef28bc5cff08c90ad8178a25f1b570cd800170f",
+      "license": "MIT code; model metadata requires retained review evidence",
+      "status": "candidate",
+      "requires_gpu_benchmark": true
+    }
+  ],
+  "policy": {
+    "user_specified_models_start_as": "candidate",
+    "benchmark_shots": 10,
+    "minimum_usable_shots": 7,
+    "talking_head_shots_must_pass": [1, 10],
+    "max_attempts_per_shot": 3
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "name": "comfyui-image-remote",
+  "kind": "image",
+  "capabilities": ["image.generate_and_edit"],
+  "execution_location": "remote",
+  "endpoint_scope": "localhost_only",
+  "status": "candidate"
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "profile_id": "young-adult-book-host-v1",
+  "status": "requires_first_manual_approval",
+  "identity": {
+    "fictional": true,
+    "adult": true,
+    "visual_age_range": [18, 25],
+    "presentation": "young Chinese woman",
+    "style": "natural, clean, approachable, restrained"
+  },
+  "required_reference_views": [
+    "front_closed_mouth_medium_closeup",
+    "left_45_closed_mouth_medium_closeup",
+    "right_45_closed_mouth_medium_closeup"
+  ],
+  "composite_reference_direct_use_allowed": false,
+  "cross_project_policy": "explicit_copy_from_user_selected_previous_project"
+}

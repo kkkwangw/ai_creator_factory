@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Environments and machine-local configuration
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.local/*
+!.local/tools.example.toml
+!.local/project-marker.example.json
+
+# IDE and operating system
+.idea/
+.vscode/
+.DS_Store
+
+# Project-private control history
+memory/history/*
+!memory/history/.gitkeep
+tasks/*.md
+!tasks/README.md
+!tasks/example-task.md
+
+# Generated, downloaded, or remote-only data
+runs/
+deliverables/
+cache/
+deployments/DEP-*/receipt.json
+outputs/*
+!outputs/.gitkeep
+experiments/*
+!experiments/.gitkeep
+models/*
+!models/README.md
+data/characters/current/*
+!data/characters/current/README.md
+data/references/video/*
+!data/references/video/README.md
+data/knowledge/*
+!data/knowledge/.gitkeep
+*.log
+
+# Media and model weights are never template source files
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.gguf
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.flac

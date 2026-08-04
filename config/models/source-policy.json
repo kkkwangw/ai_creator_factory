@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "allowed_sources": ["official_github", "official_huggingface", "official_modelscope"],
+  "modelscope_mirror_allowed_when_hash_matches_upstream": true,
+  "community_repackages_auto_approved": false,
+  "missing_official_source_behavior": "block_or_manual_same_hash_file",
+  "require": ["revision", "filename", "size_bytes", "sha256_or_lfs_oid", "license_snapshot"]
+}

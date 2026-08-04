@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "provider": "Tencent/WeChatReading",
+  "execution_location": "local",
+  "skill_version": "1.0.4",
+  "source_commit": "315698a8da1810fab0bbf24a52b38a6960e54cdc",
+  "api_key_environment": "WEREAD_API_KEY",
+  "allowed_api_names": [
+    "/store/search",
+    "/book/info",
+    "/book/chapterinfo",
+    "/book/bestbookmarks",
+    "/review/list"
+  ],
+  "blocked_private_capabilities": [
+    "shelf",
+    "personal_notes",
+    "reading_progress",
+    "reading_statistics"
+  ]
+}

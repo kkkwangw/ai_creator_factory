@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "name": "comfyui-wan-video-remote",
+  "kind": "video",
+  "capabilities": ["video.image_to_video"],
+  "execution_location": "remote",
+  "endpoint_scope": "localhost_only",
+  "status": "candidate"
+}

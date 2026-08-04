@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "profile_id": "book-list-v1-content",
+  "language": "zh-CN",
+  "default_audience": "20-40岁中文短视频用户",
+  "structure": [
+    {"name": "talking_head_hook", "target_seconds": [0, 5]},
+    {"name": "daily_resonance", "target_seconds": [5, 15]},
+    {"name": "book_insight", "target_seconds": [15, 38]},
+    {"name": "reader_fit", "target_seconds": [38, 48]},
+    {"name": "talking_head_close", "target_seconds": [48, 55]}
+  ],
+  "forbidden_patterns": [
+    "夸大改变命运",
+    "平台化点赞关注口播",
+    "长段复制热门划线或公开点评",
+    "把公开点评当作原著事实",
+    "高度模仿在世创作者"
+  ]
+}

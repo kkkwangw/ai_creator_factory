@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "template_name": "ai_creator_factory",
+  "template_version": "0.2.0",
+  "project_type": "book_video",
+  "status": "development",
+  "default_visual_template": "book-list-v1"
+}

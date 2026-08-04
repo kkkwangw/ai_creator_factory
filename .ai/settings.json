@@ -1,0 +1,38 @@
+{
+  "schema_version": 2,
+  "template_version": "0.2.0",
+  "project": {
+    "name": "ai_creator_factory",
+    "type": "book_video",
+    "mode": "personal",
+    "provider_neutral": true,
+    "one_active_run": true
+  },
+  "control": {
+    "markdown_writer": "local_primary_codex_only",
+    "remote_markdown_write": false,
+    "memory_history_limit": 20
+  },
+  "agents": {
+    "directory": ".ai/agents",
+    "default": "generalist",
+    "subagents_control_markdown_read_only": true
+  },
+  "rules": [
+    ".ai/rules/architecture.md",
+    ".ai/rules/coding.md",
+    ".ai/rules/content.md",
+    ".ai/rules/gpu.md",
+    ".ai/rules/security.md"
+  ],
+  "plugins": {
+    "search_paths": ["plugins"],
+    "auto_start": false
+  },
+  "runtime": {
+    "python": "3.11.x",
+    "mode": "unattended",
+    "allow_paid_image_fallback": false,
+    "remote_llm_allowed": false
+  }
+}

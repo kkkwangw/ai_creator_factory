@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "workflow_id": "book-list-v1",
+  "project_type": "book_video",
+  "mode": "unattended",
+  "gates": [
+    {"number": 1, "id": "book-source", "capability": "book.research"},
+    {"number": 2, "id": "script-and-shots", "capability": "content.plan"},
+    {"number": 3, "id": "narration", "capability": "audio.text_to_speech"},
+    {"number": 4, "id": "character-and-keyframes", "capability": "image.generate_and_edit"},
+    {"number": 5, "id": "video-and-lipsync", "capability": "video.generate_and_lip_sync"},
+    {"number": 6, "id": "compose-and-deliver", "capability": "media.compose"}
+  ],
+  "invalidate_from_gate": {
+    "1": [1, 2, 3, 4, 5, 6],
+    "2": [2, 3, 4, 5, 6],
+    "3": [3, 4, 5, 6],
+    "4": [4, 5, 6],
+    "5": [5, 6],
+    "6": [6]
+  },
+  "terminal_states": ["ready_for_download", "blocked", "cancelled"]
+}

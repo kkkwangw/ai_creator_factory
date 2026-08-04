@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "template_id": "book-list-v1",
+  "status": "candidate",
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 24,
+    "duration_min_seconds": 45,
+    "duration_max_seconds": 60,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "audio_codec": "aac",
+    "audio_bitrate": "192k",
+    "crf": 18,
+    "preset": "medium",
+    "color_space": "bt709",
+    "faststart": true
+  },
+  "source_video": {
+    "width": 704,
+    "height": 1280,
+    "frames": 121,
+    "fps": 24,
+    "scale_width": 1080,
+    "scale_height": 1964,
+    "crop_width": 1080,
+    "crop_height": 1920
+  },
+  "shots": {
+    "total": 10,
+    "talking_head": [1, 10],
+    "atmosphere": [2, 3, 4, 5, 6, 7, 8, 9]
+  },
+  "subtitle": {
+    "format": "ass",
+    "font_family": "Source Han Sans SC",
+    "font_size": 58,
+    "max_lines": 2,
+    "target_chinese_characters_per_line": 16
+  },
+  "title_font_family": "Source Han Serif SC",
+  "audio": {
+    "narration_target_lufs": -16,
+    "final_lufs_min": -16,
+    "final_lufs_max": -14,
+    "true_peak_max_dbtp": -1,
+    "music_ducking_db_min": 18,
+    "music_ducking_db_max": 22
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "project_id": "project-example",
+  "run_id": "run-example",
+  "files": [
+    {"role": "final_video", "path": "deliverables/current/final.mp4", "size_bytes": 1, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"role": "cover", "path": "deliverables/current/cover.jpg", "size_bytes": 1, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"role": "release_markdown", "path": "deliverables/current/release_copy.md", "size_bytes": 1, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"role": "release_json", "path": "deliverables/current/release_copy.json", "size_bytes": 1, "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}
+  ]
+}

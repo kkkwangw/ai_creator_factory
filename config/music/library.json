@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "tracks": [],
+  "policy": {
+    "approved_only_for_unattended": true,
+    "initial_target_track_count": [3, 5],
+    "reference_video_audio_reuse_allowed": false,
+    "attribution_must_be_added_to_release_copy": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "small_run_history_limit": 20,
+  "failed_large_artifacts": {
+    "delete_after_later_success": true,
+    "after_three_failures_keep_only_last": true
+  },
+  "preserve": [
+    "current_valid_character_references",
+    "current_valid_keyframes",
+    "current_valid_clips",
+    "deliverables/current",
+    "approved_models",
+    "hash_and_failure_records"
+  ],
+  "activation": {
+    "staging_first": true,
+    "atomic_current_switch": true,
+    "keep_previous_current_until_new_validation": true
+  }
+}

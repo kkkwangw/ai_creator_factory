@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "project_type": "book_video",
+  "mode": "unattended",
+  "one_active_run": true,
+  "one_gpu_task": true,
+  "remote_llm_allowed": false,
+  "allow_paid_image_fallback": false,
+  "retry": {
+    "max_attempts": 3,
+    "task_timeout_minutes": 45,
+    "bootstrap_timeout_minutes": 120,
+    "run_gpu_budget_minutes": 240
+  },
+  "transfer": {
+    "auto_file_max_bytes": 67108864,
+    "auto_deployment_max_bytes": 268435456,
+    "recursive_upload_allowed": false,
+    "delete_sync_allowed": false
+  },
+  "storage": {
+    "bootstrap_free_bytes": 107374182400,
+    "run_free_bytes": 32212254720,
+    "memory_history_limit": 20
+  },
+  "markdown_limits": {
+    "current_bytes": 16384,
+    "history_item_bytes": 16384,
+    "task_bytes": 32768,
+    "todo_bytes": 8192
+  }
+}
