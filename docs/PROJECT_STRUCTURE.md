@@ -211,6 +211,7 @@ ai_creator_factory/
 ├── CLAUDE.md
 ├── PROJECT.md
 ├── README.md
+├── README.zh-CN.md
 ├── TODO.md
 ├── pyproject.toml
 └── template.json
@@ -222,6 +223,7 @@ ai_creator_factory/
 ## 已创建文件分组
 
 - Agent入口：`AGENTS.md`、`CLAUDE.md`、`.ai/` 下的12个角色、5组规则、4个技能和3个命令。
+- 项目入口：英文 `README.md`、中文 `README.zh-CN.md`、`AGENTS.md` 和 `CLAUDE.md`。
 - 项目控制：`PROJECT.md`、`TODO.md`、`memory/CURRENT.md`、`tasks/` 和 `template.json`。
 - 生产策略：`config/` 中的视频规格、角色、内容、模型、音乐、字体、保留和运行策略。
 - 外部能力：项目内固定微信读书 Skill，以及 MiMo、ComfyUI、Wan、MuseTalk插件清单。

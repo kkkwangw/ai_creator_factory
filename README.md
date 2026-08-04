@@ -1,34 +1,40 @@
 # AI Creator Factory
 
-AI Creator Factory 是个人使用的 AI 创作模板。第一版聚焦一个可审计的垂直流程：
+[English](README.md) | [简体中文](README.zh-CN.md)
+
+AI Creator Factory is a personal AI creation template. Its first version focuses on one auditable
+vertical workflow:
 
 ```text
-一本书 -> 一个实际项目目录 -> 一条 45--60 秒竖屏书单视频
+One book -> one project directory -> one 45-60 second vertical book-recommendation video
 ```
 
-模板不是 SaaS，也不绑定 OpenAI、Claude、ComfyUI 或任何单一模型。外部能力只能通过项目级
-Skill、插件或基础设施适配器进入；当前候选模型必须完成真实租赁 GPU 基准后才能进入批准清单。
+This is not a SaaS platform and is not tied to OpenAI, Claude, ComfyUI, or any single model.
+External capabilities enter through project-local Skills, plugins, or infrastructure adapters.
+Candidate models must pass a real rented-GPU benchmark before they can be approved.
 
-## 第一版范围
+## First-Version Scope
 
-- 书籍资料：本地腾讯微信读书 Skill，书名必填。
-- 文案与分镜：本地 Codex，默认 20--40 岁中文短视频受众。
-- 语音：本地 MiMo V2.5 TTS，固定“冰糖”音色，WAV 为主时间轴。
-- 图片候选：FLUX.2 Klein 4B Base FP8。
-- 图生视频候选：Wan2.2-TI2V-5B，704x1280、24fps、121 帧。
-- 口型候选：MuseTalk 1.5，独立远程 UV 插件环境。
-- 合成：远程 FFmpeg，固定 `book-list-v1`、ASS 字幕、H.264/AAC。
-- 交付：成片、1080x1920 封面、发布文案和证据清单；不自动发布平台。
+- Book data: local Tencent WeChat Reading Skill; book title is required.
+- Script and shot plan: local Codex, targeting Chinese short-video viewers aged 20-40 by default.
+- Narration: local MiMo V2.5 TTS using the fixed "Bingtang" voice; WAV is the master timeline.
+- Image candidate: FLUX.2 Klein 4B Base FP8.
+- Image-to-video candidate: Wan2.2-TI2V-5B at 704x1280, 24fps, 121 frames.
+- Lip-sync candidate: MuseTalk 1.5 in an isolated remote UV environment.
+- Composition: remote FFmpeg with `book-list-v1`, ASS subtitles, and H.264/AAC output.
+- Delivery: final video, 1080x1920 cover, release copy, and evidence manifest; no auto-publishing.
 
-候选模型目前均为 `candidate`。没有真实 24GB 实例基准时，本模板不能声称已经具备生产视频
-能力；准入标准见 [open-video-model-stack.md](docs/research/open-video-model-stack.md)。
+All models currently remain `candidate`. Without a real 24 GB GPU benchmark, this template must not
+claim production video capability. See
+[open-video-model-stack.md](docs/research/open-video-model-stack.md) for admission criteria.
 
-## 本地与远程
+## Local and Remote Roles
 
-本地运行 Codex、微信读书、MiMo、Whisper、部署工具和控制类 Markdown。远程运行预装
-ComfyUI、候选开源模型、MuseTalk、FFmpeg 和确定性 Runner。Codex 不在远程安装或运行。
+The local machine runs Codex, WeChat Reading, MiMo, Whisper, deployment tools, and control Markdown.
+The remote machine runs the preinstalled ComfyUI environment, approved open models, MuseTalk,
+FFmpeg, and a deterministic Runner. Codex is never installed or run remotely.
 
-本地脚本只使用现有 Conda `codex`（Python 3.11.x）：
+Local scripts use only the existing Conda `codex` environment with Python 3.11:
 
 ```bash
 conda run -n codex python scripts/validate_project.py
@@ -36,48 +42,60 @@ conda run -n codex python -m pytest
 conda run -n codex ruff check .
 ```
 
-禁止使用系统 Python 3.9 或向其安装包。SSH/SFTP 功能需要时，只能在 Conda `codex`
-环境安装可选依赖：
+Do not use the system Python 3.9 or install packages into it. When SSH/SFTP is actually needed, the
+optional dependency may only be installed in Conda `codex`:
 
 ```bash
 conda run -n codex python -m pip install -e '.[ssh]'
 ```
 
-不要在尚未需要 SSH 时安装它，也不要在模板初始化阶段安装模型或重量级生成依赖。
+Do not install it before SSH is needed. Do not install models or heavyweight generation dependencies
+during template initialization.
 
-## 创建实际项目
+## Create an Actual Project
 
-1. 复制整个模板目录到新目录，不复制 `.git/`。
-2. 由本地 Codex 初始化 `PROJECT.md`、`TODO.md`、`memory/CURRENT.md` 和第一个任务。
-3. 在 `.local/tools.toml` 填写本机工具路径，在本地 `.env` 填写必要凭据。
-4. 从上一实际项目显式复制已批准角色包；不使用项目外全局角色库。
-5. 项目开始生产后锁定 `template_version`。升级时只生成差异清单，人工选择文件。
+1. Copy the complete template directory without copying `.git/`.
+2. Let local Codex initialize `PROJECT.md`, `TODO.md`, `memory/CURRENT.md`, and the first task.
+3. Configure machine-local tool paths in `.local/tools.toml` and credentials in local `.env`.
+4. Explicitly copy an approved character pack from a previous project; no global character library.
+5. Lock `template_version` once production starts. Upgrades require a generated diff and manual file
+   selection.
 
-实际项目不要求 Git。本地和远程目录结构相同，但模型、缓存、运行产物和机器配置不自动同步。
+An actual project does not require Git. Local and remote directory structures are identical, while
+models, caches, runtime artifacts, and machine-local configuration are never automatically synced.
 
-## 控制文件
+## Control Files
 
-- `PROJECT.md`：稳定项目事实与锁定模板版本。
-- `TODO.md`：简短当前任务索引。
-- `tasks/<task-id>.md`：准备做什么，由本地 Codex维护。
-- `memory/CURRENT.md`：有上限的当前交接快照；历史最多 20 份。
-- `config/`：机器无关生产策略、候选模型和固定模板。
-- `deployments/`：显式部署清单与回执，不允许递归上传。
-- `runs/`：远程任务 JSON、日志、证据和暂存产物。
-- `deliverables/current/`：原子激活的当前有效交付物。
+- `PROJECT.md`: stable project facts and locked template version.
+- `TODO.md`: compact task index plus non-authoritative current task/run pointers.
+- `tasks/<task-id>.md`: planned work, writable only by local Codex.
+- `memory/CURRENT.md`: bounded handoff snapshot; at most 20 historical snapshots.
+- `config/`: machine-independent production policies, model candidates, and fixed templates.
+- `deployments/`: explicit deployment manifests and receipts; recursive upload is forbidden.
+- `runs/`: remote task JSON, logs, evidence, and staged artifacts.
+- `deliverables/current/`: atomically activated current delivery.
 
-## 当前可运行工具
+## Available Tools
 
-- `scripts/validate_project.py`：检查控制文件大小、项目身份与基础配置。
-- `scripts/build_task_envelope.py`：从 TOML frontmatter 任务 Markdown 生成不可变 JSON envelope。
-- `scripts/build_deployment_manifest.py`：从显式文件计划生成带 SHA-256 的部署清单。
-- `scripts/verify_delivery.py`：核对当前交付文件、哈希与 ffprobe 技术规格；当前不会越权推导
-  `ready_for_download`，该状态要等远程 Runner和 Gate 1--6重验器实现后才能产生。
-- `scripts/doctor.py`：只读检查 Python、FFmpeg、Whisper、UV 和 GPU 环境。
-- `scripts/transfer.py`：通过可选 Paramiko 执行清单限定的 SSH/SFTP 传输。
+- `scripts/validate_project.py`: validate control-file limits, identity, and base configuration.
+- `scripts/build_task_envelope.py`: compile task Markdown frontmatter into immutable JSON.
+- `scripts/build_deployment_manifest.py`: create a SHA-256 deployment manifest from explicit files.
+- `scripts/verify_delivery.py`: verify current files, hashes, and partial ffprobe specifications. It does
+  not claim `ready_for_download` until the Runner and Gate 1-6 revalidators exist.
+- `scripts/doctor.py`: read-only inspection of Python, FFmpeg, Whisper, UV, and GPU tools.
+- `scripts/transfer.py`: manifest-bound SSH/SFTP transfer through optional Paramiko.
 
-上传计划示例见 `deployments/plan.example.json`，下载规格示例见
-`deployments/download.example.json`。两者都只接受逐文件条目，不扫描或递归传输目录。
+See `deployments/plan.example.json` for upload planning and `deployments/download.example.json` for
+download specifications. Both operate on explicit files only and never scan or recursively transfer
+directories.
 
-远程 ComfyUI/MuseTalk 生产适配器仍需在第一台租赁实例上完成基准和锁定；脚本不会用占位结果
-假装生成成功。
+The remote Runner and ComfyUI/MuseTalk production adapters still require implementation and a real
+rented-instance benchmark. Current scripts never use placeholder output to report false success.
+
+## Documentation
+
+- [Architecture](docs/ARCHITECTURE.md)
+- [Video workflow](docs/WORKFLOW.md)
+- [Remote runbook](docs/REMOTE_RUNBOOK.md)
+- [Complete project structure](docs/PROJECT_STRUCTURE.md)
+- [Architecture decisions](docs/DECISIONS.md)
