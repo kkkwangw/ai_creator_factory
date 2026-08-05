@@ -101,9 +101,9 @@ ai_creator_factory/
 │   ├── REMOTE_RUNBOOK.md
 │   ├── WORKFLOW.md
 │   └── research/
-│       ├── book-video-weread.md
 │       ├── open-music-sources.md
-│       └── open-video-model-stack.md
+│       ├── open-video-model-stack.md
+│       └── weread-integration.md
 ├── experiments/
 │   └── .gitkeep
 ├── memory/

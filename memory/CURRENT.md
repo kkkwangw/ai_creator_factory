@@ -12,7 +12,7 @@
 
 - 模板版本：`0.2.0`
 - 候选模型研究：`docs/research/open-video-model-stack.md`
-- 微信读书研究：`docs/research/book-video-weread.md`
+- 微信读书接入：`docs/research/weread-integration.md`
 
 ## 阻塞
 
